@@ -7,7 +7,6 @@ metadata:
     kueue.x-k8s.io/queue-name: user-queue
   annotations:
     slinky.slurm.net/job-name: job-sleep-single-3
-    slinky.slurm.net/timelimit: "5"
     slurmjob.slinky.slurm.net/account: slurm
     slurmjob.slinky.slurm.net/partition: all
 spec:
@@ -15,12 +14,18 @@ spec:
   completions: 3
   suspend: true
   template:
+    metadata:
+      annotations:
+        slinky.slurm.net/job-name: job-sleep-single-3
+        slurmjob.slinky.slurm.net/account: slurm
+        slurmjob.slinky.slurm.net/timelimit: "10"
+        slurmjob.slinky.slurm.net/partition: all
     spec:
       schedulerName: slurm-bridge-scheduler
       containers:
       - name: dummy-job
-        image: registry.k8s.io/e2e-test-images/agnhost:2.53
-        args: ["pause"]
+        image: quay.io/prometheus/busybox
+        command: [sh, -c, sleep 30]
         resources:
           requests:
             cpu: "1"
