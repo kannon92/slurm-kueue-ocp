@@ -1,0 +1,24 @@
+---
+apiVersion: jobset.x-k8s.io/v1alpha2
+kind: JobSet
+metadata:
+  generateName: jobset-single-
+  namespace: test-slurm
+  annotations:
+    slurmjob.slinky.slurm.net/account: slurm
+    slurmjob.slinky.slurm.net/partition: all
+spec:
+  replicatedJobs:
+    - name: workers
+      replicas: 1
+      template:
+        spec:
+          parallelism: 1
+          completions: 1
+          backoffLimit: 0
+          template:
+            spec:
+              containers:
+                - name: worker1
+                  image: busybox:stable
+                  command: [sh, -c, sleep 60]

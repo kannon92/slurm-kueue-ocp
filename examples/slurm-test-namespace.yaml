@@ -3,8 +3,6 @@ kind: Namespace
 metadata:
   labels:
     kubernetes.io/metadata.name: test-slurm
-    kueue.openshift.io/managed: "true"
-    kueue.io/managed: "true"
     managed-by-slurm: "true"
   name: test-slurm
 

@@ -2,20 +2,18 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: job-sleep-multiple
-  namespace: slinky
+  name: job-sleep-single
+  namespace: test-slurm
   # slurm-bridge annotations on parent object
   annotations:
-    slinky.slurm.net/job-name: job-sleep-multiple
-    slinky.slurm.net/timelimit: "5"
+    slinky.slurm.net/job-name: job-sleep-single
     slurmjob.slinky.slurm.net/account: slurm
     slurmjob.slinky.slurm.net/partition: all
 spec:
-  completions: 3
-  parallelism: 3
+  completions: 1
+  parallelism: 1
   template:
     spec:
-      schedulerName: slurm-bridge-scheduler
       containers:
         - name: sleep
           image: quay.io/prometheus/busybox
