@@ -15,10 +15,10 @@ controllerManager:
   manager:
     image:
       repository: registry.k8s.io/kueue/kueue
-      tag: v0.16.0
+      tag: v0.18.0
       # This should be set to 'IfNotPresent' for released version
       pullPolicy: Always
-    tag: v0.16.0
+    tag: v0.17.0
     podAnnotations: {}
     resources:
       limits:

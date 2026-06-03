@@ -2,27 +2,28 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: job-sleep-single
+  name: job-sleep-whale-60
   namespace: test-slurm
   # slurm-bridge annotations on parent object
   annotations:
-    slinky.slurm.net/job-name: job-sleep-single
+    slinky.slurm.net/job-name: job-sleep-whale-2
     slurmjob.slinky.slurm.net/account: slurm
     slurmjob.slinky.slurm.net/partition: all
+    slurmjob.slinky.slurm.net/timelimit: "60"
 spec:
-  completions: 1
-  parallelism: 1
+  completions: 3
+  parallelism: 3
   template:
     spec:
       containers:
         - name: sleep
           image: quay.io/prometheus/busybox
-          command: [sh, -c, sleep 30]
+          command: [sh, -c, sleep 30000]
           resources:
             requests:
-              cpu: '1'
+              cpu: '3'
               memory: 100Mi
             limits:
-              cpu: '1'
+              cpu: '3'
               memory: 100Mi
       restartPolicy: Never

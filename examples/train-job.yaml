@@ -1,0 +1,63 @@
+apiVersion: trainer.kubeflow.org/v1alpha1
+kind: ClusterTrainingRuntime
+metadata:
+  name: torch-distributed-volcano
+  labels:
+    trainer.kubeflow.org/framework: torch
+spec:
+  mlPolicy:
+    numNodes: 1
+    torch: {}
+  template:
+    spec:
+      replicatedJobs:
+        - name: node
+          template:
+            metadata:
+              labels:
+                trainer.kubeflow.org/trainjob-ancestor-step: trainer
+              annotations:
+                slinky.slurm.net/job-name: job-sleep-minow
+                slurmjob.slinky.slurm.net/account: slurm
+                slurmjob.slinky.slurm.net/partition: all
+                slurmjob.slinky.slurm.net/timelimit: "1"
+            spec:
+              template:
+                spec:
+                  containers:
+                    - name: node
+                      image: pytorch/pytorch:2.10.0-cuda12.8-cudnn9-runtime
+---
+apiVersion: trainer.kubeflow.org/v1alpha1
+kind: TrainJob
+metadata:
+  name: slurm-example
+  namespace: slurm-bridge
+spec:
+  runtimeRef:
+    apiGroup: trainer.kubeflow.org
+    kind: ClusterTrainingRuntime
+    name: torch-distributed-volcano
+
+  trainer:
+    numNodes: 4
+    command:
+      - python3
+      - -c
+      - |
+        import os
+        import time
+        node_rank = os.getenv("PET_NODE_RANK", "0")
+        nnodes = os.getenv("PET_NNODES", "1")
+        print(f"Node {node_rank}/{nnodes} started via Volcano gang scheduling")
+        print(f"All {nnodes} nodes are guaranteed to start together")
+        time.sleep(5)
+        print(f"Node {node_rank} training complete")
+
+    resourcesPerNode:
+      requests:
+        cpu: "1"
+        memory: "2Gi"
+      limits:
+        cpu: "2"
+        memory: "4Gi"
