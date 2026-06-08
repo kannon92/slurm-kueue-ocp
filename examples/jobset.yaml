@@ -10,11 +10,11 @@ metadata:
 spec:
   replicatedJobs:
     - name: workers
-      replicas: 1
+      replicas: 2
       template:
         spec:
-          parallelism: 1
-          completions: 1
+          parallelism: 2
+          completions: 2
           backoffLimit: 0
           template:
             spec:

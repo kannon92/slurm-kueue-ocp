@@ -1,0 +1,319 @@
+---
+# Source: slurm/templates/secrets/jwtkey.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: slurm-auth-jwt
+  namespace: default
+  labels:
+    helm.sh/chart: slurm-1.1.0
+    app.kubernetes.io/part-of: slurm
+    app.kubernetes.io/version: "25.11"
+    app.kubernetes.io/managed-by: Helm
+type: Opaque
+data:
+  jwt.key: UHVFLktwbVU5P05pRk9LdidVaWhMM3ElXlFCZmpyVHx8TmdITU5yZHttWWVdPkpSTT0gNy5uJmN0UmpOIz4hJ0p3YUR8cyg8W0VOO3BoXHlqZExUMiJxZXI1TDBiX1d+SU5TeGVKe3ZARzw0SX5UY3FBP3dpYGYyT2khUmxgSSRVLlg7QyMiXEg8XilYPlczeyFxNFl0Yl9OUG4nNzEvPl9ZN0RkTn5BViE2IE8hLm5rQzRQZz8xeFlmT1tjIGQlIiJXOFAhVCExSiQrOVMlanUyRVRIbS1RZXhwYnh1azN0J09aMW0hbEY6cWRDdyZUVEZYb246J0IjWVxTWD8oQCk7TVVQZ3xJYXgiXCkvPCgzeDJzL0FDImVxPlNUVS82Yl80Y1QwI0c0Si91bThRd111ZnpiOCVwPSE7Zj0tM0omZUZId2FdR3ZmU2IpdWlmOXlJIXNuZS5ETXlVTjJiOndKdl1HbzBKOlxzLEU9LEFGPSFkPC4ndEFuPDphYEAqclFfSUJgRntWTTAuUE5BJ1V4aTAvUz83TiJEWl1fWW5wfkBZL35vREBuMF9kPHhOcjcwc2JEdD48P1wvVlBydzwtcEp7SXAiZiFOU0QrfkpMRX47PF1RPlQteU5YdGZMejU/XSBpJmBacSRzW3hRfjBAIjk1Z0B2NiBDeEsvYVEgZlIvbCBMMi9cfnteaXQhZX03YiQsZlhqempEOV4lQF9KY0FjcyM6a2R8RDFtYDk0MFpKaSA5RWFwNmR5RENTQzFiYilveCI2Ql9TMGhmbHw+IUk/WGJuKjE5bUI7S1ohajVAME5qODdZTXNgakFRIzBafDM0REk6Mi9rQyYoSkJnZyVJVFBlQDFnN0k8Z10/eEMuJHtPZX5afnwkcy0wMHtgLUQ0TWxyZXN8WCg7fGpgYl9jIWd+Yl9SWSs9RSssPG40ITlMKUt5PG8lfEssLClLXGFfSUZDZ20nWytvQytqekExLHMxRis/X1RPPFtUaShPYFRHVGU1QzApNXAvcClMclwmWGc/QjZVPFJMdjcte2p7THZdckg/O1FURnctOjhaek4pW0VlXzczcHFtOXNIWlM2ekI+IU52MDo/PjpOLXR2fXZLQXl3dS85SVApV0A3aTtwdTI4Z3xFXyozMkMrb3M2KFlJTn46PDswIDNhP0tkK1VpRWxkJjxsSTVrXGI5UzZSQSIzSC1qfC5JTVZyVkxgPU9DMzQyYnluJEZmWy00akt6by5wej8sOShMNTs9WGVsVUQtOnQ2Rm03Nk5rVkVMUGJzTEs9Qy10M0xWRSNDUXQtJGd6M15sJWkmJ2FAJlBmWnxZXWkqSGw4ez9MZGlpSyBjYyB4QlZCKA==
+immutable: true
+---
+# Source: slurm/templates/secrets/slurmkey.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: slurm-auth-slurm
+  namespace: default
+  labels:
+    helm.sh/chart: slurm-1.1.0
+    app.kubernetes.io/part-of: slurm
+    app.kubernetes.io/version: "25.11"
+    app.kubernetes.io/managed-by: Helm
+type: Opaque
+data:
+  slurm.key: OD4qQUFyfilcaW1jOmVMNVMvfmp4XVl+O15iUyY8S2dJc04gNUBQMVpfY1JuJCMvMCoxQ1ghQSUlR1NCR0IpOEkoV3AqM1NUX0hcZH45b1hsX1AiOnt6XCEsLVQlcyZ6N1pYfWE9VzwhfV1TZ2BYMCReSy1xbWg9fGUxTlU1aFU0dFciQUheVFUvcCMnflF8VCFdKWhiam1gMjAwfm5Bdn00XFhic3deMmJ2R0xfOzFNS0U+WlxDblRmai06THY7OSw3ajB4STB7b0tKeEt7PXZLfCV5e0ttVHV9aC5vRzJMdS5qR30pWCdkOikhe3xZKGQ3cSpJU3VxVmdIcz5Ldnl0K2YmRl4gQSchN3QrfFl6fVxOcyVVWWs7Rk57fF9hR2Z5eUhNI2pHdkw7KUlLamt5bFRUX31EWD54bDZmYVVvISxYQ3dfPUAyP1MwXl8oL0YtbnopeTE6MCtKM21bXXoqZUlSOlw5KTJVcGpDJiVNaDwjdVktIXNLdi0gKm0sb1p1bjslRVBOTSMjbFBgIXBCTWF0KTl8Q1JUaCY3XUQlbTttVCVYISkybFRQLXg5My1CdVFXZGZgQlJKZGYzWWpgOy9zUSYsWH5uZlVgXyRFNic3dSdTRWN3b2Una3ZMMUhqM3todzRzWVI6TyJ7RVdQTzZ4IjdqWEZCezZGWzJwT1hLbWQ7KlZEIXhebyV8Okg4b3RKRlctJz4qSV0ofS1OeTFvKlN9ZyJmfENMWTBlLk0/Ll5SYSdSbWQ0ST07XDNOdldVUFM2PHB6b3EmfjxlN19ZbCUkQ0NFandhckRycmhZME0rIE40ZkZSRU5YVVZjZnpPO3pUPSFcUSNiQWpTMW08IUElMyxfLHQrZjQwfkJvOSI7Mj5lTVVfQG8kcWdfZXosUFFrYyRhV0hBSDtBblc4fFNoUz0zfFtudnBnNzQxbipPelEkPVhEcFlNJGBHVzpMYWZANiM8PyY8VnkqRjZfVCx5VV1gLCtkLkFTSz9uTEkiXz0jLC9ZQjFKc31BaG9OP1ksXUNxey5ZQVBodVI9fDNBb3gqdFFhcVNNc15wVFtYND9GMl0+SGp3VmhEMC1bej43fX1+IXBUQCItdVQvckx0OXI4RUFkMiNbdmIhR0dueF0mbWdgXzx+YyJHNXxbcXciYiQ8JWc9I2AzIWxHVFMmSCZyfFU7eylNd2R8KTZQREtocU06aDZkWl96YXcicCdkQS12ezwibU5cKmU/ZGAtfXd9aDQtQzdfLCo7fTksREksfDJWLHU3e09rLSYkPXJKaktvUUJmS1JlZWxEOShfIyZqfWIpfnNzZCF0Tz1QMExYXjRieGZTaFciQUc+IiU8aF1HbUNAeg==
+immutable: true
+---
+# Source: slurm/templates/vendor/nvidia/dcgm/epilog-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: slurm-epilog-dcgm
+  namespace: default
+  labels:
+    helm.sh/chart: slurm-1.1.0
+    app.kubernetes.io/part-of: slurm
+    app.kubernetes.io/version: "25.11"
+    app.kubernetes.io/managed-by: Helm
+data:
+  
+  epilog-90-dcgm.sh: |
+    #!/bin/bash
+    # SPDX-FileCopyrightText: Copyright (C) SchedMD LLC.
+    # SPDX-FileCopyrightText: Copyright (C) NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+    # SPDX-License-Identifier: Apache-2.0
+    #
+    # DCGM GPU-to-Job Mapping Epilog Script
+    #
+    # This script runs when jobs complete on GPU nodes and cleans up job mapping files
+    # to prevent stale job mappings in the DCGM exporter.
+    
+    function log_msg() {
+    	echo "[$(date)] [$$] $*" >&2
+    }
+    
+    function set_globals() {
+    	declare -g METRICS_DIR="/var/lib/dcgm-exporter/job-mapping"
+    }
+    
+    function clean_gpu_job_files() {
+    	if [[ -z ${SLURM_JOB_GPUS:-} ]]; then
+    		log_msg "no gres gpus requested by user"
+    		return
+    	fi
+    
+    	mapfile -t -d ',' cuda_devs <<<"${SLURM_JOB_GPUS:-}"
+    	cuda_devs[-1]="${cuda_devs[-1]%$'\n'}"
+    
+    	for gpu_id in "${cuda_devs[@]}"; do
+    		log_msg "removing ${METRICS_DIR:-}/${gpu_id:-99}"
+    		rm -f "${METRICS_DIR:-}/${gpu_id:-99}" || log_msg "unable to remove file ${METRICS_DIR:-}/${gpu_id:-99}"
+    	done
+    }
+    
+    set -o nounset -o errexit -o pipefail -o errtrace
+    set_globals
+    clean_gpu_job_files
+---
+# Source: slurm/templates/vendor/nvidia/dcgm/prolog-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: slurm-prolog-dcgm
+  namespace: default
+  labels:
+    helm.sh/chart: slurm-1.1.0
+    app.kubernetes.io/part-of: slurm
+    app.kubernetes.io/version: "25.11"
+    app.kubernetes.io/managed-by: Helm
+data:
+  
+  prolog-90-dcgm.sh: |
+    #!/bin/bash
+    # SPDX-FileCopyrightText: Copyright (C) SchedMD LLC.
+    # SPDX-FileCopyrightText: Copyright (C) NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+    # SPDX-License-Identifier: Apache-2.0
+    #
+    # DCGM GPU-to-Job Mapping Prolog Script
+    #
+    # This script runs when jobs start on GPU nodes and creates job mapping files
+    # for the DCGM exporter to correlate GPU metrics with Slurm job IDs.
+    
+    function log_msg() {
+    	echo "[$(date)] [$$] $*" >&2
+    }
+    
+    function set_globals() {
+    	declare -g METRICS_DIR="/var/lib/dcgm-exporter/job-mapping"
+    }
+    
+    function make_gpu_job_files() {
+    	if [[ -z ${SLURM_JOB_GPUS:-} ]]; then
+    		log_msg "no gres gpus requested by user"
+    		return
+    	fi
+    
+    	if [[ ! -d ${METRICS_DIR:-} ]]; then
+    		mkdir -p "${METRICS_DIR:-}" || (
+    			log_msg "unable to create the data dir ${METRICS_DIR:-missing}"
+    			return
+    		)
+    	fi
+    
+    	mapfile -t -d ',' cuda_devs <<<"${SLURM_JOB_GPUS:-}"
+    	cuda_devs[-1]="${cuda_devs[-1]%$'\n'}"
+    
+    	for gpu_id in "${cuda_devs[@]}"; do
+    		log_msg "writing ${METRICS_DIR:-}/${gpu_id:-99}"
+    		printf "%s" "${SLURM_JOB_ID:-0}" >"${METRICS_DIR:-}/${gpu_id:-99}" || log_msg "unable to write job file"
+    	done
+    }
+    
+    set -o nounset -o errexit -o pipefail -o errtrace
+    set_globals
+    make_gpu_job_files
+---
+# Source: slurm/templates/controller/controller-cr.yaml
+apiVersion: slinky.slurm.net/v1beta1
+kind: Controller
+metadata:
+  name: slurm
+  namespace: default
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: slurm
+    app.kubernetes.io/version: "25.11"
+    helm.sh/chart: slurm-1.1.0
+spec:
+  slurmKeyRef:
+    name: slurm-auth-slurm
+    key: slurm.key
+  jwtKeyRef:
+    name: slurm-auth-jwt
+    key: jwt.key
+  extraConf: |
+    PartitionName=all Nodes=ALL Default=YES MaxTime=UNLIMITED State=UP
+  prologScriptRefs:
+    - name: slurm-prolog-dcgm
+  epilogScriptRefs:
+    - name: slurm-epilog-dcgm
+  prologSlurmctldScriptRefs:
+  epilogSlurmctldScriptRefs:
+  slurmctld:
+    args: []
+    image: ghcr.io/slinkyproject/slurmctld:25.11-ubuntu24.04
+    imagePullPolicy: IfNotPresent
+    resources: {}
+  reconfigure:
+    image: ghcr.io/slinkyproject/slurmctld:25.11-ubuntu24.04
+    imagePullPolicy: IfNotPresent
+    resources: {}
+  logfile:
+    image: docker.io/library/alpine:latest
+    imagePullPolicy: IfNotPresent
+    resources: {}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: slurm
+        app.kubernetes.io/version: "25.11"
+        helm.sh/chart: slurm-1.1.0
+    spec:
+      affinity: {}
+      imagePullSecrets: null
+      initContainers: []
+      nodeSelector:
+        kubernetes.io/os: linux
+      priorityClassName: ""
+      resources: {}
+      tolerations: []
+  persistence:
+    accessModes:
+    - ReadWriteOnce
+    enabled: true
+    existingClaim: ""
+    resources:
+      requests:
+        storage: 4Gi
+  service:
+    metadata: {}
+    spec: {}
+  metrics:
+    enabled: false
+    serviceMonitor:
+      annotations: {}
+      enabled: false
+      endpoints:
+      - path: /metrics/jobs
+      - path: /metrics/nodes
+      - path: /metrics/partitions
+      - path: /metrics/scheduler
+      interval: 30s
+      labels: {}
+      scrapeTimeout: 25s
+---
+# Source: slurm/templates/nodeset/nodeset-cr.yaml
+apiVersion: slinky.slurm.net/v1beta1
+kind: NodeSet
+metadata:
+  name: slurm-worker-slinky
+  namespace: default
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: slurm
+    app.kubernetes.io/version: "25.11"
+    helm.sh/chart: slurm-1.1.0
+spec:
+  controllerRef:
+    name: slurm
+    namespace: default
+  partition:
+    enabled: false
+  scalingMode: StatefulSet
+  replicas: 1
+  slurmd:
+    args: []
+    env: []
+    image: ghcr.io/slinkyproject/slurmd:25.11-ubuntu24.04
+    imagePullPolicy: IfNotPresent
+    resources: {}
+    volumeMounts: []
+  logfile:
+    image: docker.io/library/alpine:latest
+    imagePullPolicy: IfNotPresent
+    resources: {}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: slurm
+        app.kubernetes.io/version: "25.11"
+        helm.sh/chart: slurm-1.1.0
+    spec:
+      affinity: {}
+      hostname: slinky-
+      imagePullSecrets: null
+      initContainers: []
+      nodeSelector:
+        kubernetes.io/os: linux
+      priorityClassName: ""
+      resources: {}
+      tolerations: []
+      volumes: []
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 25%
+    type: RollingUpdate
+  ordinalPadding: 0
+  taintKubeNodes: false
+  workloadDisruptionProtection: true
+---
+# Source: slurm/templates/restapi/restapi-cr.yaml
+apiVersion: slinky.slurm.net/v1beta1
+kind: RestApi
+metadata:
+  name: slurm
+  namespace: default
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: slurm
+    app.kubernetes.io/version: "25.11"
+    helm.sh/chart: slurm-1.1.0
+spec:
+  controllerRef:
+    name: slurm
+    namespace: default
+  replicas: 1
+  slurmrestd:
+    args: []
+    env: []
+    image: ghcr.io/slinkyproject/slurmrestd:25.11-ubuntu24.04
+    imagePullPolicy: IfNotPresent
+    resources: {}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: slurm
+        app.kubernetes.io/version: "25.11"
+        helm.sh/chart: slurm-1.1.0
+    spec:
+      affinity: {}
+      imagePullSecrets: null
+      initContainers: []
+      nodeSelector:
+        kubernetes.io/os: linux
+      priorityClassName: ""
+      resources: {}
+      tolerations: []
+  service:
+    metadata: {}
+    spec: {}
