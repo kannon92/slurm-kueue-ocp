@@ -1,3 +1,8 @@
+sharedConfig:
+  slurmJwtSecret:
+    name: slurm-bridge-token
+    key: auth-token
+
 admission:
   managedNamespaceSelector:
     matchLabels:
